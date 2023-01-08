@@ -18,4 +18,36 @@ const gameOptions = {
 		
 	})
 };
-export { againOptions, gameOptions };
+
+const menuOptions = {
+	reply_markup: JSON.stringify({
+		inline_keyboard: [
+			[{text: 'Информация о нас', callback_data: '/info'}, {text: 'Проверить производителя', callback_data: '/producer'}],
+			[{text: 'Найти трубу', callback_data: '4'}, {text: 'Проверить сертификат', callback_data: '5'}],
+			
+		]
+})};
+
+const producersOptions = {
+	reply_markup: JSON.stringify({
+		inline_keyboard: [
+			[{text: 'ООО Хайзенберг', callback_data: '/norm_pipe'}, {text: 'ООО ПраймПласт', callback_data: '/norm_pipe'}],
+			[{text: 'ООО Полимер Лимитед', callback_data: '/norm_pipe'}, {text: 'ООО Газпласт', callback_data: '/norm_pipe'}],
+			
+		]
+})};
+
+const finalOptions = {
+	reply_markup: JSON.stringify({
+		inline_keyboard: [
+			[{text: 'Дальнейшие подробности', callback_data: '0'}, {text: 'Меню', callback_data: '/menu'}],
+			
+			
+		]
+})
+
+}
+
+
+
+export { againOptions, gameOptions, menuOptions, producersOptions, finalOptions };
